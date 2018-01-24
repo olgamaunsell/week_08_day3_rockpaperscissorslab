@@ -30,4 +30,6 @@ public class RockPaperScissorsTest {
         assertEquals(Move.ROCK, rockPaperScissors.getUserMove());
 
     }
+
+
 }
