@@ -6,12 +6,13 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 
 public class GameActivity extends AppCompatActivity {
 
-    Button rock;
-    Button scissors;
-    Button paper;
+    ImageButton rock;
+    ImageButton scissors;
+    ImageButton paper;
     RockPaperScissors game;
 
 

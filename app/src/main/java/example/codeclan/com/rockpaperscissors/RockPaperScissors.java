@@ -34,19 +34,19 @@ public class RockPaperScissors {
 
     public String play() {
 
-        
+
 
         if (this.userMove.equals(this.computerMove)){
             return "Draw";
         }
         else if (this.userMove.equals(Move.ROCK) && this.computerMove.equals(Move.SCISSORS)){
-            return "You win, Computer played " + this.computerMove;
+            return "You win! Computer played " + this.computerMove.toString().toLowerCase();
         } else if (this.userMove.equals(Move.SCISSORS) && this.computerMove.equals(Move.PAPER)){
-            return "You win, Computer played " + this.computerMove;
+            return "You win! Computer played " + this.computerMove.toString().toLowerCase();
         } else if (this.userMove.equals(Move.PAPER) && this.computerMove.equals(Move.ROCK)) {
-            return "You win, Computer played " + this.computerMove;
+            return "You win! Computer played " + this.computerMove.toString().toLowerCase();
         } else {
-            return "You lose, Computer played " + this.computerMove;
+            return "You lose! Computer played " + this.computerMove.toString().toLowerCase();
         }
     }
 
