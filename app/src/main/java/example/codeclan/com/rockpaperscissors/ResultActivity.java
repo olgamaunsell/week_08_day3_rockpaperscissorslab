@@ -13,6 +13,8 @@ import android.widget.TextView;
 public class ResultActivity extends AppCompatActivity {
 
     TextView resultText;
+    TextView computerMoveText;
+    TextView userMoveText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,13 +23,20 @@ public class ResultActivity extends AppCompatActivity {
         setContentView(R.layout.result);
 
         resultText = findViewById(R.id.result);
+        userMoveText = findViewById(R.id.userMove);
+        computerMoveText = findViewById(R.id.computerMove);
 
         Intent intent = getIntent();
 
         Bundle extras = intent.getExtras();
 
-        String answer = extras.getString("result");
+        String result = extras.getString("result");
+        String computerMove = extras.getString("computerMove");
+        String userMove = extras.getString("userMove");
 
-        resultText.setText(answer);
+        resultText.setText(result);
+        userMoveText.setText(userMove);
+        computerMoveText.setText(computerMove);
+
     }
 }

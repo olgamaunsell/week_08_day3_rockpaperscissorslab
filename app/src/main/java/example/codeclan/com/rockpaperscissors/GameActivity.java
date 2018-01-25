@@ -21,60 +21,31 @@ public class GameActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.game_activity);
 
-
-
         rock = findViewById(R.id.rock);
         scissors = findViewById(R.id.scissors);
         paper = findViewById(R.id.paper);
 
-
-        //game = new RockPaperScissors()
-
     }
 
 
-    public void onRockButtonClick(View button){
+    public void onButtonClick(View button){
 
+        Move userMove = Move.valueOf(button.getTag().toString());
 
-        game = new RockPaperScissors(Move.ROCK);
+        game = new RockPaperScissors(userMove);
 
         String displayResult = game.play();
 
+        String displayComputerMove = "Computer played: " + game.computerMoveString();
+        String displayUserMove = "You played: " + game.userMoveString();
+
         Intent intent = new Intent(this, ResultActivity.class);
         intent.putExtra("result", displayResult);
-
+        intent.putExtra("computerMove", displayComputerMove);
+        intent.putExtra("userMove", displayUserMove);
 
         startActivity(intent);
 
     }
 
-    public void onScissorsButtonClick(View button){
-
-
-        game = new RockPaperScissors(Move.SCISSORS);
-
-        String displayResult = game.play();
-
-        Intent intent = new Intent(this, ResultActivity.class);
-        intent.putExtra("result", displayResult);
-
-
-        startActivity(intent);
-
-    }
-
-    public void onPaperButtonClick(View button){
-
-
-        game = new RockPaperScissors(Move.PAPER);
-
-        String displayResult = game.play();
-
-        Intent intent = new Intent(this, ResultActivity.class);
-        intent.putExtra("result", displayResult);
-
-
-        startActivity(intent);
-
-    }
 }

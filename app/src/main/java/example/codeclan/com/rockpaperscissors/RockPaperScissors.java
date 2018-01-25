@@ -19,34 +19,42 @@ public class RockPaperScissors {
 
     }
 
-    public Move getComputerMove(){
-        return this.computerMove;
+    public Move getUserMove() {
+        return this.userMove;
     }
+
     public Move generateComputerMove() {
         Move[] allMoves = Move.values();
         Collections.shuffle(Arrays.asList(allMoves));
         return allMoves[0];
     }
 
-    public Move getUserMove() {
-        return this.userMove;
+    public Move getComputerMove(){
+        return this.computerMove;
+    }
+
+
+    public String computerMoveString(){
+        return getComputerMove().toString().toLowerCase();
+    }
+
+    public String userMoveString(){
+        return getUserMove().toString().toLowerCase();
     }
 
     public String play() {
-
-
 
         if (this.userMove.equals(this.computerMove)){
             return "Draw";
         }
         else if (this.userMove.equals(Move.ROCK) && this.computerMove.equals(Move.SCISSORS)){
-            return "You win! Computer played " + this.computerMove.toString().toLowerCase();
+            return "You win !";
         } else if (this.userMove.equals(Move.SCISSORS) && this.computerMove.equals(Move.PAPER)){
-            return "You win! Computer played " + this.computerMove.toString().toLowerCase();
+            return "You win !";
         } else if (this.userMove.equals(Move.PAPER) && this.computerMove.equals(Move.ROCK)) {
-            return "You win! Computer played " + this.computerMove.toString().toLowerCase();
+            return "You win !";
         } else {
-            return "You lose! Computer played " + this.computerMove.toString().toLowerCase();
+            return "You lose !";
         }
     }
 
