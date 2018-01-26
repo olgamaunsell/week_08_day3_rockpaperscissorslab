@@ -2,6 +2,10 @@
     <string name="app_name">Rock Paper Scissors</string>
     <string name="rules">\
         Rock crushes scissors\
+
         Scissors cut paper\
+
         Paper smothers rock  </string>
+    <string name="say_hello">Hello!</string>
+    <string name="menu_toast_hello">Hello</string>
 </resources>
